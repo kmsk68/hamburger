@@ -1,0 +1,215 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>mobile Nav Exp</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	@charset "utf-8";
+
+/** {
+  margin: 0;
+  padding: 0;
+} */
+
+body {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", 'Trebuchet MS' /*,'Noto Sans'*/, sans-serif;
+	
+}
+header {
+	background-image: url(https://user-images.githubusercontent.com/40442987/75100791-96b82400-55a0-11ea-8950-4919186632c0.png);
+	background-repeat: no-repeat;
+	background-size: 100% 225px;
+	margin-bottom: 1rem;
+	
+}
+container {
+	
+}
+.nav-grid {
+	display: grid;
+	grid-template-columns: 20px 1fr 1fr 20px;
+	grid-template-rows: 70% 30%;
+	width: 100%;
+	grid-template-areas: 
+		". pagetitle  logo ."
+		". nav  logo .";
+	
+	
+}
+.main-grid {
+	display: grid;
+	grid-template-columns: 20px 1fr 20px;
+	width: 100%;
+	grid-template-areas:
+		". welcome-photo ."
+		". welcome ."
+		". sub-photo ."
+		". welcome-sub ."
+}
+main{
+	background-color:green;
+	width: 100%;
+	height: 800px;
+}
+
+#pagetitle {
+	/*background-color: rebeccapurple;  /*--To Delete-- */
+	grid-area: pagetitle;
+	font-family: 'Playfair Display', serif;
+	margin: 0px;
+	padding-top: 0rem;
+	font-size: 30px;
+	
+}
+
+
+#logo {
+	/*background-color: purple; /*--To Delete--*/
+	grid-area: logo;
+	padding-top: 1.2rem;
+}
+#logo img {
+    max-width: 250px;
+}
+#nav {
+	/*background-color: midnightblue;  /*--To Delete--*/
+	grid-area: nav;
+	font-family: 'Noto Sans', sans-serif;
+	word-spacing: .75rem;
+	text-align: left;
+}
+#nav a:link, a:active{
+	text-decoration: none;
+	color: #5d6f70;
+}
+#nav a:visited{
+	text-decoration: none;
+	color: #455456;
+}
+#nav a:hover{
+	color: rgba(94,156,170,.72);	
+}
+h1 {
+	font-family: 'Playfair Display', serif;
+	font-size: 18px;
+	color: /*#06242b*/ #1b4868;
+}
+	
+	.hamburger {
+		background-color: transparent;
+		border: 0;
+		color: #F0181B;
+		cursor: pointer;
+		font-size: 40px;
+	}
+	.hamburger:focus {
+		outline: none;
+	}
+	.btn {
+		width: 100%;		
+	}
+	.nav-ul li a {
+		display:block;
+		padding: 10px;
+	}
+	.nav-ul {
+		display: none;
+	}
+	.nav-ul.show {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		list-style-type: none;
+		text-decoration: none;
+		flex-wrap: wrap;
+		padding: 15px;
+		margin-bottom:10px;
+	}
+
+
+@media screen and (min-width: 800px){
+	/*Adjust size of h2 for responsive sizes - smaller on smaller screens*/
+	
+	body{
+		
+	}
+	header {
+		background-image: url(https://user-images.githubusercontent.com/40442987/75100789-87d17180-55a0-11ea-858b-664d0c95ea65.png);
+		background-repeat: no-repeat;
+		background-size: 100% 225px;
+		margin-bottom: 1rem;
+
+	}
+	h1 {
+		font-size: 2.5rem;
+	}
+	h2 {
+		font-size: 2rem;
+	}
+
+	.nav-grid {
+		display: grid;
+		grid-template-columns: 150px 1.5fr  1fr 30px;
+		grid-template-rows: 60% 40%;
+		grid-template-areas: 
+			". pagetitle  logo ."
+			". nav  logo .";
+		margin-bottom: 1rem;
+	}
+	#pagetitle {
+		padding-top: 15px;
+	}
+	#nav {
+		padding-top: 20px;
+		text-align: left;
+		font-size: 1.1rem;
+	}
+	.hamburger{
+		display: none;
+	}
+	.nav-ul {
+		display: block;
+	}
+
+
+}
+</style>	
+</head>
+
+<body>
+	<header> 
+		<div id="grid" class="nav-grid">
+
+			<div id="pagetitle"><h1>Capital Region Underwater Hockey</h1></div>
+
+			<nav id="nav">
+				<button class="hamburger" id="hamburger"><em class="fas fa-bars"></em></button>
+				<ul class="nav-ul" id="nav-ul">
+					<li><a href="url">Home</a> </li>
+					<li><a href="/url">Basics</a></li> 
+					<li><a href="url">Tournament</a> </li>
+					<li><a href="url">Media</a> </li>
+					<li><a href="url">Join</a> </li>
+				</ul>
+			</nav>
+			<div id="logo"><img src="https://user-images.githubusercontent.com/40442987/75049236-dba46380-5497-11ea-9537-0176adfee150.png" alt="CRUWH Logo" width="100%"/></div>
+		</div> <!--End grid-->
+
+	</header>
+	<main>
+	</main>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navUL = document.getElementById('nav-ul');
+
+hamburger.addEventListener('click', () => {
+	navUL.classList.toggle('show');
+});
+		
+	</script>
+	
+</body>
+</html>
